@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container mx-auto py-20">
+  <div id="app" class="container mx-auto py-20 px-4 md:px-0">
     <Info />
   </div>
 </template>
@@ -14,3 +14,5 @@ export default {
   },
 };
 </script>
+<style>
+</style>
