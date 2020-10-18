@@ -1,7 +1,8 @@
 <template>
   <a
     :href="articleInfo.url"
-    class="bg-white max-w-xs md:max-w-sm rounded-lg group shadow hover:bg-gray-400 block transition-colors duration-200"
+    class="animate__animated animate__fadeIn bg-white max-w-xs md:max-w-sm rounded-lg group shadow hover:bg-gray-400 block transition-colors duration-200"
+    style="direction: rtl"
   >
     <div class="pb-3/5 relative">
       <img
