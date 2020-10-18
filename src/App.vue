@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <div class="container mx-auto py-20 px-4 md:px-0">
+    <div class="container mx-auto py-10 md:py-20 px-4 md:px-0">
       <Info />
       <News class="mt-6" />
     </div>
