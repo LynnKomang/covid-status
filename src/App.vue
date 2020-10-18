@@ -3,7 +3,17 @@
     <Header />
     <div class="container mx-auto py-20 px-4 md:px-0">
       <Info />
-      <NewsCard class="mt-6 mx-auto" :articleInfo="articles[0]" />
+
+      <div
+        class="flex py-4 justify-between mt-6 overflow-hidden overflow-x-scroll"
+      >
+        <NewsCard
+          class="flex-none mx-5"
+          v-for="article in articles"
+          :key="article.url"
+          :articleInfo="article"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -29,7 +39,6 @@ export default {
   mounted() {
     getArticles().then((articles) => {
       this.articles = articles;
-      console.log(this.articles);
     });
   },
 };
