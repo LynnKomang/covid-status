@@ -20,4 +20,7 @@ export default {
 };
 </script>
 <style>
+body {
+  background-color: #e2e8f0;
+}
 </style>
