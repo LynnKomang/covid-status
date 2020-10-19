@@ -4,6 +4,7 @@
     <div class="container mx-auto py-10 md:py-20 px-4 md:px-0">
       <Info />
       <News class="mt-6" />
+      <Charts />
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 import Header from "./components/Header";
 import Info from "./components/Info";
 import News from "./components/News";
+import Charts from "./components/Charts";
 
 export default {
   name: "App",
@@ -19,6 +21,7 @@ export default {
     Header,
     Info,
     News,
+    Charts,
   },
 };
 </script>

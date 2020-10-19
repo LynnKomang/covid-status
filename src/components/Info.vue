@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { getDetails } from "../ApiRequests";
+import { getSummary } from "../ApiRequests";
 import InfoCard from "./InfoCard";
 
 export default {
@@ -29,7 +29,7 @@ export default {
     InfoCard,
   },
   mounted() {
-    getDetails("Israel").then((response) => {
+    getSummary("Israel").then((response) => {
       this.info = response;
     });
   },
