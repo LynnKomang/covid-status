@@ -1,8 +1,16 @@
 <template>
-  <div class="bg-white shadow rounded-lg p-5">
-    <Chart v-if="cases.length > 0" :chartdata="confirmedAndRecovered" />
-    <Chart v-if="cases.length > 0" :chartdata="active" />
-    <Chart v-if="cases.length > 0" :chartdata="deaths" />
+  <div>
+    <div class="text-3xl text-center md:text-5xl md:text-left font-medium mb-3">
+      Graphs
+    </div>
+    <div
+      v-if="cases.length > 0"
+      class="bg-white shadow rounded-lg p-5 md:flex md:flex-wrap"
+    >
+      <Chart class="mb-5 md:mx-2 md:mb-0" :chartdata="confirmedAndRecovered" />
+      <Chart class="mb-5 md:mx-2 md:mb-0" :chartdata="active" />
+      <Chart :chartdata="deaths" />
+    </div>
   </div>
 </template>
 
@@ -21,7 +29,7 @@ export default {
   },
   computed: {
     labels() {
-      return this.cases.map((c, i) => (i % 10 == 0 ? c.Date : ""));
+      return this.cases.map((c, i) => (i % 3 == 0 ? c.Date : ""));
     },
     confirmedAndRecovered() {
       const preparedCases = {};
