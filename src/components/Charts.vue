@@ -1,6 +1,8 @@
 <template>
   <div class="bg-white shadow rounded-lg p-5">
-    <Chart v-if="cases.length > 0" :chartdata="preparedCases" />
+    <Chart v-if="cases.length > 0" :chartdata="confirmedAndRecovered" />
+    <Chart v-if="cases.length > 0" :chartdata="active" />
+    <Chart v-if="cases.length > 0" :chartdata="deaths" />
   </div>
 </template>
 
@@ -18,17 +20,18 @@ export default {
     };
   },
   computed: {
-    preparedCases() {
+    labels() {
+      return this.cases.map((c, i) => (i % 10 == 0 ? c.Date : ""));
+    },
+    confirmedAndRecovered() {
       const preparedCases = {};
 
-      preparedCases["labels"] = this.cases.map((c, i) =>
-        i % 10 == 0 ? c.Date : ""
-      );
+      preparedCases["labels"] = this.labels;
 
       preparedCases["datasets"] = [
         {
           label: "Confirmed",
-          borderColor: "#4495E3 ",
+          borderColor: "#EDC147",
           data: this.cases.map((c) => c.Confirmed),
         },
         {
@@ -36,6 +39,31 @@ export default {
           borderColor: "#82E643",
           data: this.cases.map((c) => c.Recovered),
         },
+      ];
+
+      return preparedCases;
+    },
+    active() {
+      const preparedCases = {};
+
+      preparedCases["labels"] = this.labels;
+
+      preparedCases["datasets"] = [
+        {
+          label: "Active",
+          borderColor: "#4495E3",
+          data: this.cases.map((c) => c.Active),
+        },
+      ];
+
+      return preparedCases;
+    },
+    deaths() {
+      const preparedCases = {};
+
+      preparedCases["labels"] = this.labels;
+
+      preparedCases["datasets"] = [
         {
           label: "Deaths",
           borderColor: "#D6624A",
