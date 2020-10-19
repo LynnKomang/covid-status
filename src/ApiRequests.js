@@ -14,5 +14,8 @@ export const getAllCases = async (countryName) => {
 };
 
 export const getArticles = async () => {
-	return (await axios.get(`${process.env.VUE_APP_ADDRESS}/articles`)).data;
+	return (await axios.get(`${process.env.VUE_APP_ADDRESS}/articles`)).data.map((article) => ({
+		...article,
+		publishedAt: dateFormat(article.publishedAt, 'mmm dd yyyy HH:MM'),
+	}));
 };

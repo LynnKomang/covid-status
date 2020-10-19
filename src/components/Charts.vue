@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     labels() {
-      return this.cases.map((c, i) => (i % 3 == 0 ? c.Date : ""));
+      return this.cases.map((c) => c.Date);
     },
     confirmedAndRecovered() {
       const preparedCases = {};

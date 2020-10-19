@@ -12,11 +12,13 @@
       />
     </div>
     <div class="py-2 px-5 text-right">
+      <div class="text-sm text-gray-800 mb-1">
+        {{ articleInfo.publishedAt }}
+      </div>
       <div class="text-xl font-bold mb-3">{{ articleInfo.title }}</div>
-      <div class="mb-4">
+      <div class="mb-2">
         {{ articleInfo.description }}
       </div>
-      <div class="text-sm text-gray-800">{{ articleInfo.publishedAt }}</div>
     </div>
   </a>
 </template>

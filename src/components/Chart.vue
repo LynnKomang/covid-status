@@ -10,10 +10,16 @@ export default {
       type: Object,
       default: null,
     },
-    options: {
-      type: Object,
-      default: null,
-    },
+  },
+  data() {
+    return {
+      options: {
+        animation: {
+          duration: 0, // general animation time
+        },
+        responsiveAnimationDuration: 0, // animation duration after a resize
+      },
+    };
   },
   mounted() {
     this.renderChart(this.chartdata, this.options);
