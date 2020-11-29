@@ -5,10 +5,10 @@
     </div>
     <div
       v-if="cases.length > 0"
-      class="bg-white shadow rounded-lg p-5 md:flex md:flex-wrap"
+      class="bg-white shadow rounded-lg p-5 grid gap-5 grid-cols-1 lg:grid-cols-3 items-center"
     >
-      <Chart class="mb-5 md:mx-2 md:mb-0" :chartdata="confirmedAndRecovered" />
-      <Chart class="mb-5 md:mx-2 md:mb-0" :chartdata="active" />
+      <Chart :chartdata="confirmedAndRecovered" />
+      <Chart :chartdata="active" />
       <Chart :chartdata="deaths" />
     </div>
   </div>
