@@ -6,7 +6,7 @@
       Latest statistics
     </div>
     <div
-      class="md:flex bg-white shadow rounded-xl divide-dashed divide-y-2 md:divide-x-2 md:divide-y-0 divide-gray-400"
+      class="md:flex bg-white shadow rounded-xl divide-dashed divide-y-2 md:divide-x-2 md:divide-y-0 divide-gray-300"
     >
       <InfoCard :number="info.NewDeaths" title="New deaths 💀️" />
       <InfoCard :number="info.NewConfirmed" title="New cases 😷️" />

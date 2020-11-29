@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-gray-200">
     <Header />
-    <div class="container mx-auto py-10 md:py-20 px-4 md:px-0">
+    <div class="container mx-auto py-10 md:py-20 px-8 md:px-0">
       <Info />
       <News class="mt-6" />
       <Charts class="mt-10" />
@@ -27,6 +27,6 @@ export default {
 </script>
 <style>
 body {
-  background-color: #e2e8f0;
+  background-color: #edf2f7;
 }
 </style>
